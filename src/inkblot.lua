@@ -10,9 +10,9 @@ local InkConfig = mod.config
 
 local old_func = G.FUNCS.exit_mods
 
-G.FUNCS.exit_mods = function()
-  old_func()
+G.FUNCS.exit_mods = function(e)
   InkConfig.inkoptions = 1
+  return old_func(e)
 end
 
 local create_nodes = function()
